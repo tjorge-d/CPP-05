@@ -90,15 +90,15 @@ void	Form::beSigned(Bureaucrat &bureaucrat)
 
 const char*	Form::GradeTooHighException::what() const throw()
 {
-	return ("A Form grade is too high");
+	return ("a Form grade is too high");
 }
 
 const char*	Form::GradeTooLowException::what() const throw()
 {
-	return ("A Form grade is too low");
+	return ("a Form grade is too low");
 }
 
 const char*	Form::AlreadySigned::what() const throw()
 {
-	return ("The Form has already been signed");
+	return ("the Form has already been signed");
 }
