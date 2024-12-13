@@ -1,9 +1,9 @@
-NAME= ex01
+NAME= ex02
 
 CXX= c++
 CXXFLAGS= -Wall -Werror -Wextra -std=c++98 #-g
 
-SRC= main.cpp Form.cpp Bureaucrat.cpp
+SRC= main.cpp AForm.cpp Bureaucrat.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 
 OBJ_DIR= objects
 OBJ= $(addprefix $(OBJ_DIR)/, $(SRC:%.cpp=%.o))

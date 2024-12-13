@@ -3,19 +3,19 @@
 // CONSTRUCTORS & DESTRUCTORS
 
 PresidentialPardonForm::PresidentialPardonForm() :
-AForm("Default", "Default", 25, 5)
+AForm("Presidential Pardon", "Default", 25, 5)
 {
 	std::cout << "PresidentialPardonForm default constructor called\n";
 }
 
 PresidentialPardonForm::PresidentialPardonForm(std::string target) :
-AForm("Default", target, 25, 5)
+AForm("Presidential Pardon", target, 25, 5)
 {
 	std::cout << "PresidentialPardonForm default constructor called\n";
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &copy) : 
-AForm(copy._name, copy._target, copy._gradeToSign, _gradeToExec)
+AForm(copy._name, copy._target, copy._gradeToSign,  copy._gradeToExec)
 {
 	std::cout << "PresidentialPardonForm copy constructor called\n";
 	*this = copy;

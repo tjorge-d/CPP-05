@@ -81,12 +81,12 @@ void	Bureaucrat::signForm(AForm &form)
 	{
 		form.beSigned(*this);
 		std::cout << "The Bureaucrat " << _name \
-		<< " has successfully signed the Form " << form.getName() << std::endl;
+		<< " has successfully signed the " << form.getName() << " Form" << std::endl;
 	}
 	catch (std::exception &exception)
 	{
-		std::cout << "The Bureaucrat " << _name << " couldn't sign the Form " \
-		<< form.getName() << " because " << exception.what() << std::endl;
+		std::cout << "The Bureaucrat " << _name << " couldn't sign the " \
+		<< form.getName() << " Form because " << exception.what() << std::endl;
 	}
 }
 
@@ -96,12 +96,12 @@ void	Bureaucrat::executeForm(AForm const & form)
 	{
 		form.execute(*this);
 		std::cout << "The Bureaucrat " << _name \
-		<< " has executed the Form " << form.getName() << std::endl;
+		<< " has executed the " << form.getName() << " Form" << std::endl;
 	}
 	catch (std::exception &exception)
 	{
-		std::cerr << "The Bureaucrat " << _name << " couldn't execute the Form " \
-		<< form.getName() << " because " << exception.what() << std::endl;
+		std::cerr << "The Bureaucrat " << _name << " couldn't execute the " \
+		<< form.getName() << " Form because " << exception.what() << std::endl;
 	}
 }
 

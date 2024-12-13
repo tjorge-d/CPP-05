@@ -64,7 +64,7 @@ AForm&	AForm::operator=(const AForm &copy)
 
 std::ostream	&operator<<(std::ostream &stream, const AForm &right)
 {
-	stream << "The Form " << right.getName() << " requires a grade of " \
+	stream << "The " << right.getName() << " Form requires a grade of " \
 	<< right.getGradeToSign() << " to be signed, " << right.getGradeToExec() \
 	<< " to be executed and it has ";
 	if (!right.getSigned())

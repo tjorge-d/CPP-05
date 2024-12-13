@@ -1,23 +1,38 @@
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
-void	invalid_forms_test()
+void	ShrubberyCreationForm_test(Bureaucrat &smart, Bureaucrat &not_smart)
 {
-	std::cout << "\n----- Lesser Form -----\n";
+	std::cout << "\n----- Shrubbery Creation Form -----\n";
 	try
 	{
-		Form	Lesser("Lesser", 100, 20000);
-		std::cout << "I shouldn't print this!";
+		ShrubberyCreationForm	form("Palace");
+		not_smart.signForm(form);
+		smart.signForm(form);
+
+		not_smart.executeForm(form);
+		smart.executeForm(form);
 	}
 	catch (std::exception & exception)
 	{
 		std::cout << "Exception: " << exception.what() << std::endl;
 	}
+}
 
-	std::cout << "\n----- Greater Form -----\n";
+void	RobotomyRequestForm_test(Bureaucrat &smart, Bureaucrat &not_smart)
+{
+	std::cout << "\n----- Robotomy Request Form -----\n";
 	try
 	{
-		Form	Greater("Greater", -20000, 100);
+		RobotomyRequestForm	form("R2D2");
+		not_smart.signForm(form);
+		smart.signForm(form);
+
+		not_smart.executeForm(form);
+		smart.executeForm(form);
 		std::cout << "I shouldn't print this!";
 	}
 	catch (std::exception & exception)
@@ -26,32 +41,18 @@ void	invalid_forms_test()
 	}
 }
 
-void	easy_form_test(Bureaucrat &lucky_one)
+void	PresidentialPardonForm_test(Bureaucrat &smart, Bureaucrat &not_smart)
 {
-	std::cout << "\n----- Easy Form (success) -----\n";
+	std::cout << "\n----- Presidential Pardon Form -----\n";
 	try
 	{
-		Form	Easy("Easy", 140, 145);
-		std::cout << Easy;
-		lucky_one.signForm(Easy);
-		std::cout << Easy;
-		lucky_one.signForm(Easy);
-	}
-	catch (std::exception & exception)
-	{
-		std::cout << "Exception: " << exception.what() << std::endl;
-	}
-}
+		PresidentialPardonForm	form("Rui Pinto");
+		not_smart.signForm(form);
+		smart.signForm(form);
 
-void	hard_form_test(Bureaucrat &unlucky_one)
-{
-	std::cout << "\n----- Hard Form (not enough grade) -----\n";
-	try
-	{
-		Form	Hard("Hard", 5, 10);
-		std::cout << Hard;
-		unlucky_one.signForm(Hard);
-		std::cout << Hard;
+		not_smart.executeForm(form);
+		smart.executeForm(form);
+		std::cout << "I shouldn't print this!";
 	}
 	catch (std::exception & exception)
 	{
@@ -63,14 +64,16 @@ int main()
 {
 	try
 	{
-		invalid_forms_test();
 
-		Bureaucrat Paulo("Paulo", 130);
+		Bureaucrat Albert("Albert ", 1);
+		Bureaucrat Donald("Donald", 150);
 		std::cout << "\n\n----- Initial values -----\n";
-		std::cout << Paulo;
+		std::cout << Albert;
+		std::cout << Donald;
 
-		easy_form_test(Paulo);
-		hard_form_test(Paulo);
+		ShrubberyCreationForm_test(Albert, Donald);
+		RobotomyRequestForm_test(Albert, Donald);
+		PresidentialPardonForm_test(Albert, Donald);
 	}
 	catch (std::exception & exception)
 	{

@@ -3,19 +3,19 @@
 // CONSTRUCTORS & DESTRUCTORS
 
 RobotomyRequestForm::RobotomyRequestForm() :
-AForm("Default", "Default", 72, 45)
+AForm("Robotomy Request", "Default", 72, 45)
 {
 	std::cout << "RobotomyRequestForm default constructor called\n";
 }
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target) :
-AForm("Default", target, 72, 45)
+AForm("Robotomy Request", target, 72, 45)
 {
 	std::cout << "RobotomyRequestForm default constructor called\n";
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy) : 
-AForm(copy._name, copy._target, copy._gradeToSign, _gradeToExec)
+AForm(copy._name, copy._target, copy._gradeToSign,  copy._gradeToExec)
 {
 	std::cout << "RobotomyRequestForm copy constructor called\n";
 	*this = copy;
@@ -39,5 +39,10 @@ RobotomyRequestForm&	RobotomyRequestForm::operator=(const RobotomyRequestForm &c
 
 void	RobotomyRequestForm::action()const
 {
-	
+
+	std::cout << "BrrrrrRRRrrrRRRRRRrRrRRRRRrrrrRrrrrr!!!" << std::endl;
+	if (rand() % 2)
+		std::cout << _target << "HAS SUCCESSFULLY BEEN ROBOTOMIZED!" << std::endl;
+	else
+		std::cout << "THE ROBOTOMIZATION PROCCESS HAS FAILED!" << std::endl;
 }
