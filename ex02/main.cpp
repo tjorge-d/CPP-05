@@ -33,7 +33,9 @@ void	RobotomyRequestForm_test(Bureaucrat &smart, Bureaucrat &not_smart)
 
 		not_smart.executeForm(form);
 		smart.executeForm(form);
-		std::cout << "I shouldn't print this!";
+		smart.executeForm(form);
+		smart.executeForm(form);
+		smart.executeForm(form);
 	}
 	catch (std::exception & exception)
 	{
@@ -52,7 +54,6 @@ void	PresidentialPardonForm_test(Bureaucrat &smart, Bureaucrat &not_smart)
 
 		not_smart.executeForm(form);
 		smart.executeForm(form);
-		std::cout << "I shouldn't print this!";
 	}
 	catch (std::exception & exception)
 	{
@@ -64,8 +65,7 @@ int main()
 {
 	try
 	{
-
-		Bureaucrat Albert("Albert ", 1);
+		Bureaucrat Albert("Albert", 1);
 		Bureaucrat Donald("Donald", 150);
 		std::cout << "\n\n----- Initial values -----\n";
 		std::cout << Albert;
